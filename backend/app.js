@@ -2,10 +2,10 @@ const express = require('express');
 
 const app = express();
 
-const blogRoutes = require('./routes/blog');
+const postRoutes = require('./routes/post');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://marchrys:Mar051731@piiquante.lhf1s.mongodb.net/git?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://marchrys:Mar051731@piiquante.lhf1s.mongodb.net/blog?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -20,6 +20,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/blog', blogRoutes);
+app.use('/api/posts', postRoutes);
 
 module.exports = app;

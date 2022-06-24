@@ -1,0 +1,18 @@
+<h1>Créer un post</h1>
+
+<form>
+    <div class="mb-3">
+        <label for="titleInput" class="form-label">Titre</label>
+        <input type="text" class="form-control" id="titleInput" name="titleInput" [(ngModel)]="formData.title">
+    </div>
+
+    <div class="mb-3">
+        <label for="contentInput" class="form-label">Contenu du post</label>
+        <textarea class="form-control" id="contentInput" rows="3" name="contentInput" [(ngModel)]="formData.content"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="doApiCall()">Enregistrer</button>
+</form>
+
+
+<div>{{ formData | json }}</div>

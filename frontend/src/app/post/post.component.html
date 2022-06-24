@@ -1,0 +1,8 @@
+<div class="spinner-border text-primary" role="status" *ngIf="!finishedApiCall">
+</div>
+
+<div class="post-container" *ngIf="finishedApiCall">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <a routerLink="">Retour à l'accueil</a>
+</div>
