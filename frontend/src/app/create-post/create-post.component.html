@@ -1,6 +1,6 @@
 <h1>Créer un post</h1>
 
-<form>
+<form (submit)="doApiCall()">
     <div class="mb-3">
         <label for="titleInput" class="form-label">Titre</label>
         <input type="text" class="form-control" id="titleInput" name="titleInput" [(ngModel)]="formData.title">
@@ -11,8 +11,12 @@
         <textarea class="form-control" id="contentInput" rows="3" name="contentInput" [(ngModel)]="formData.content"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary" (click)="doApiCall()">Enregistrer</button>
+    <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="!formData.title || !formData.content"
+    >
+        Enregistrer
+    </button>
 </form>
 
-
-<div>{{ formData | json }}</div>

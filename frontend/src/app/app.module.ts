@@ -10,6 +10,8 @@ import { PostComponent } from './post/post.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CreatePostComponent } from './create-post/create-post.component';
 import { FormsModule } from '@angular/forms';
+import { UpdatePostComponent } from './update-post/update-post.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     PostComponent,
     NavbarComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    UpdatePostComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

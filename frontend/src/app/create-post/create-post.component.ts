@@ -25,8 +25,8 @@ export class CreatePostComponent implements OnInit {
       method: "POST",
       // Adding body or contents to send
       body: JSON.stringify({
-          title: "PHP",
-          content: "Il nous permet de faire des pages web dynamiques!"
+        title: this.formData.title,
+        content: this.formData.content
       }),
       // Adding headers to the request
       headers: {

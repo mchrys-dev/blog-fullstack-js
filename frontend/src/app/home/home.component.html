@@ -4,10 +4,11 @@
 <div class="posts-container" *ngIf="finishedApiCall">
   <h1>Tous les posts</h1>
 
-  <article class="card bg-secondary mb-3" *ngFor="let post of posts">
-      <a class="card-header h4" [routerLink]="['post', post._id]">{{ post.title }}</a>
-      <div class="card-body">
-        <p class="card-text"> {{ post.content }}</p>
-      </div>
-  </article>
+  <div class="d-flex flex-row flex-wrap justify-content-around">
+    <article class="card bg-secondary mb-3 col-12 col-md-5" *ngFor="let post of posts">
+        <a class="card-header h4" [routerLink]="['post', post._id]">{{ post.title }}</a>
+        <div class="card-body">
+          <p class="card-text"> {{ post.content }}</p>
+        </div>
+    </article>
 </div>

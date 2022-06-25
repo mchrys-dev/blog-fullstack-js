@@ -1,0 +1,24 @@
+<h1>Modifier un post</h1>
+
+<div class="spinner-border text-primary" role="status" *ngIf="!finishedApiCall">
+</div>
+
+<form *ngIf="finishedApiCall" (submit)="updatePost()">
+    <div class="mb-3">
+        <label for="titleInput" class="form-label">Titre</label>
+        <input type="text" class="form-control" id="titleInput" name="titleInput" [(ngModel)]="post.title">
+    </div>
+
+    <div class="mb-3">
+        <label for="contentInput" class="form-label">Contenu du post</label>
+        <textarea class="form-control" id="contentInput" rows="3" name="contentInput" [(ngModel)]="post.content"></textarea>
+    </div>
+
+    <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="!post.title || !post.content"
+    >
+        Enregistrer
+    </button>
+</form>
